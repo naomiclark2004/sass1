@@ -1,0 +1,75 @@
+$fontstack: 'Gotu', sans-serif;
+$fontsize: 16px;
+
+$primary: lightskyblue;
+$primary-dark : darken($primary, 40%);
+$breakpoint-tablet: 649px;
+
+* {
+    line-height: 20px;
+    font-family: $fontstack;
+    padding: 0;
+}
+
+
+
+nav {
+    ul {
+        display: flex;
+        background-color: $primary;
+        outline-color: $primary-dark;
+        outline-style: solid;
+        list-style: none;
+
+        h1 {
+            margin: 0 20px;
+        }
+
+        li {
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            outline: 2px solid $primary-dark;
+            color: $primary-dark;
+            &:hover {
+                transition: 1s;
+                background-color: $primary-dark;
+                font-weight: bold;
+                color: $primary;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+        }
+    }
+}
+
+#container {
+    max-width: 800px;
+
+    h1 {
+        color: $primary-dark;
+        padding: 10px;
+    }
+
+    li {
+        font-size: 16px;
+        margin-left: 15px;
+    }
+}
+
+// small screens
+@media (max-width: $breakpoint-tablet) {
+    nav {
+        ul {
+            flex-wrap: wrap;
+            flex-direction: column;
+
+            li {
+                width: auto;
+            }
+        }
+    }
+}
